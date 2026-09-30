@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Эламан & Шакира — Тойго чакыруу</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f3ec;
+      color: #3d3a35;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 35px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 650px;
+      margin: auto;
+      animation: fadeIn 1.2s ease;
+    }
+
+    /* =========================
+       OPENING ENVELOPE
+    ========================= */
+
+    #opening {
+      background:
+        linear-gradient(rgba(247,243,236,.75), rgba(247,243,236,.75)),
+        url("images/opening.jpg") center/cover;
+      cursor: pointer;
+    }
+
+    .envelope {
+      width: 290px;
+      height: 190px;
+      margin: auto;
+      position: relative;
+      background: #eee5d8;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.18);
+    }
+
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 145px solid transparent;
+      border-right: 145px solid transparent;
+      border-top: 100px solid #ded1bf;
+      transform-origin: top;
+      transition: 1.2s ease;
+      z-index: 3;
+    }
+
+    .envelope.open .flap {
+      transform: rotateX(180deg);
+    }
+
+    .seal {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      background: #8d7660;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 65px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .open-text {
+      margin-top: 35px;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    .light {
+      background: #fbf8f2;
+    }
+
+    .title {
+      font-size: clamp(42px, 12vw, 82px);
+      font-weight: normal;
+      letter-spacing: 3px;
+      color: #36342f;
+      margin: 20px 0;
+    }
+
+    .amp {
+      font-family: cursive;
+      font-size: 34px;
+      color: #8c7964;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      line-height: 1.9;
+      letter-spacing: 1px;
+      max-width: 520px;
+      margin: 20px auto;
+    }
+
+    .script {
+      font-family: "Brush Script MT", cursive;
+      font-size: 32px;
+      color: #756351;
+      line-height: 1.5;
+    }
+
+    .photo {
+      width: 100%;
+      max-width: 560px;
+      max-height: 70vh;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.15);
+      margin: 25px auto;
+      display: block;
+    }
+
+    /* =========================
+       INVITATION
+    ========================= */
+
+    .invitation {
+      background:
+        linear-gradient(rgba(250,247,241,.82), rgba(250,247,241,.82)),
+        url("images/photo1.jpg") center/cover;
+    }
+
+    /* =========================
+       COUPLE
+    ========================= */
+
+    .couple {
+      background: #f7f2e9;
+    }
+
+    /* =========================
+       DATE
+    ========================= */
+
+    .date-number {
+      font-size: clamp(50px, 13vw, 90px);
+      letter-spacing: 8px;
+      font-weight: normal;
+      margin: 20px 0;
+    }
+
+    .date-line {
+      width: 100px;
+      height: 1px;
+      background: #9a8975;
+      margin: 20px auto;
+    }
+
+    /* =========================
+       PROGRAM
+    ========================= */
+
+    .program {
+      background: #eee8de;
+    }
+
+    .program-title {
+      font-size: 35px;
+      margin-bottom: 45px;
+      letter-spacing: 2px;
+    }
+
+    .program-item {
+      margin: 30px 0;
+    }
+
+    .program-time {
+      font-size: 30px;
+      color: #806f5c;
+      margin-bottom: 8px;
+    }
+
+    .program-text {
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       LOCATION
+    ========================= */
+
+    .location {
+      background:
+        linear-gradient(rgba(246,242,235,.85), rgba(246,242,235,.85)),
+        url("images/location.jpg") center/cover;
+    }
+
+    .restaurant {
+      font-size: 35px;
+      margin: 20px 0;
+    }
+
+    .address {
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 20px 0 30px;
+    }
+
+    .map-button {
+      display: inline-block;
+      padding: 15px 35px;
+      background: #5f584f;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      letter-spacing: 1px;
+      transition: .3s;
+    }
+
+    .map-button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
+
+    .countdown {
+      background: #f5f0e8;
+    }
+
+    .countdown-box {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .time-box {
+      min-width: 75px;
+    }
+
+    .time-number {
+      font-size: 32px;
+      color: #746452;
+    }
+
+    .time-label {
+      font-size: 11px;
+      letter-spacing: 1px;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       RSVP
+    ========================= */
+
+    .rsvp {
+      background: #eee8de;
+    }
+
+    .question {
+      font-size: 31px;
+      line-height: 1.4;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 330px;
+      margin: auto;
+    }
+
+    button {
+      border: none;
+      padding: 16px 20px;
+      border-radius: 30px;
+      font-size: 15px;
+      font-family: inherit;
+      cursor: pointer;
+      background: #746656;
+      color: white;
+      transition: .3s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      opacity: .9;
+    }
+
+    .secondary {
+      background: transparent;
+      border: 1px solid #8c7c69;
+      color: #655949;
+    }
+
+    #guestOptions {
+      display: none;
+      margin-top: 30px;
+      animation: fadeIn .7s ease;
+    }
+
+    #cannotAttend {
+      display: none;
+      margin-top: 30px;
+      animation: fadeIn .7s ease;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       FINAL
+    ========================= */
+
+    .final {
+      background:
+        linear-gradient(rgba(247,243,236,.78), rgba(247,243,236,.78)),
+        url("images/photo3.jpg") center/cover;
+    }
+
+    .final-text {
+      font-size: 20px;
+      line-height: 2;
+      max-width: 520px;
+      margin: 25px auto;
+    }
+
+    .final-names {
+      font-size: 38px;
+      margin-top: 35px;
+    }
+
+    /* =========================
+       MUSIC BUTTON
+    ========================= */
+
+    .music-button {
+      position: fixed;
+      right: 18px;
+      top: 18px;
+      z-index: 999;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      padding: 0;
+      background: rgba(70,65,58,.75);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media(max-width: 500px) {
+      .envelope {
+        width: 260px;
+        height: 170px;
+      }
+
+      .flap {
+        border-left-width: 130px;
+        border-right-width: 130px;
+      }
+
+      .restaurant {
+        font-size: 28px;
+      }
+
+      .question {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- MUSIC -->
+  <audio id="music" loop>
+    <source src="music/jack-ozgocho-kun.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-button" onclick="toggleMusic()" id="musicBtn">
+    ♪
+  </button>
+
+
+  <!-- =========================
+       1. OPENING
+  ========================= -->
+
+  <section id="opening" onclick="openInvitation()">
+
+    <div class="content">
+
+      <div class="envelope" id="envelope">
+        <div class="flap"></div>
+
+        <div class="seal">
+          E & S
+        </div>
+      </div>
+
+      <div class="open-text">
+        Чакырууңузду ачуу үчүн басыңыз
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       2. POEM
+  ========================= -->
+
+  <section class="light">
+
+    <div class="content">
+
+      <p class="script">
+        Эки жүрөк бир сүйүүгө байланган,<br>
+        Эки тагдыр бир жолго айланган.<br>
+        Өзгөчө күндө кубанычыбызды бөлүшүп,<br>
+        Сиздерди тоюбузга күтөбүз!
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       3. NAMES
+  ========================= -->
+
+  <section class="couple">
+
+    <div class="content">
+
+      <div class="subtitle">
+        ӨМҮРҮБҮЗДӨГҮ ЭҢ ӨЗГӨЧӨ КҮН
+      </div>
+
+      <h1 class="title">
+        Эламан
+        <span class="amp">&</span>
+        Шакира
+      </h1>
+
+      <p class="subtitle">
+        Биздин өзгөчө күнүбүзгө
+        сиздерди чын жүрөктөн чакырабыз!
+      </p>
+
+      <img
+        src="images/photo1.jpg"
+        class="photo"
+        alt="Эламан жана Шакира"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       4. INVITATION TEXT
+  ========================= -->
+
+  <section class="invitation">
+
+    <div class="content">
+
+      <p class="script">
+        Кымбаттуу жакындарыбыз!
+      </p>
+
+      <p class="subtitle">
+        Өмүрүбүздөгү эң маанилүү жана өзгөчө
+        күндөрдүн биринде сиздерди жаныбыздан
+        көрүп, кубанычыбызды чогуу бөлүшкүбүз келет.
+      </p>
+
+      <p class="subtitle">
+        Тойубузга келип, ак тилегиңиздерди айтып,
+        бактылуу күнүбүздүн күбөсү болуп бериңиздер!
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       5. TOY OWNERS
+  ========================= -->
+
+  <section class="light">
+
+    <div class="content">
+
+      <div class="subtitle">
+        ТОЙ ЭЭЛЕРИ
+      </div>
+
+      <h2 class="restaurant">
+        Сүйүнбай & Анаркан
+      </h2>
+
+      <img
+        src="images/photo2.jpg"
+        class="photo"
+        alt="Wedding"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       6. DATE
+  ========================= -->
+
+  <section class="couple">
+
+    <div class="content">
+
+      <div class="subtitle">
+        ТОЮБУЗДУН КҮНҮ
+      </div>
+
+      <div class="date-number">
+        10.10.2026
+      </div>
+
+      <div class="date-line"></div>
+
+      <p class="subtitle">
+        Ишемби
+      </p>
+
+      <p class="subtitle">
+        Саат 16:00
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       7. PROGRAM
+  ========================= -->
+
+  <section class="program">
+
+    <div class="content">
+
+      <h2 class="program-title">
+        Тойдун программасы
+      </h2>
+
+      <div class="program-item">
+
+        <div class="program-time">
+          16:00
+        </div>
+
+        <div class="program-text">
+          Конокторду жылуу тосуп алуу
+        </div>
+
+      </div>
+
+      <div class="program-item">
+
+        <div class="program-time">
+          17:00
+        </div>
+
+        <div class="program-text">
+          Тойдун башталышы
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       8. LOCATION
+  ========================= -->
+
+  <section class="location">
+
+    <div class="content">
+
+      <div class="subtitle">
+        ТОЙ ӨТҮҮЧҮ ЖЕР
+      </div>
+
+      <h2 class="restaurant">
+        «Элхан Гранд» рестораны
+      </h2>
+
+      <p class="address">
+        Бишкек шаары,<br>
+        Карагул Акмат көчөсү, 70
+      </p>
+
+      <!--
+        Бул шилтемеге өзүңөрдүн 2GIS
+        дарек шилтемеңерди койгула.
+      -->
+
+      <a
+        href="https://2gis.kg/bishkek"
+        target="_blank"
+        class="map-button"
+      >
+        📍 2GIS — ДАРЕКТИ КӨРҮҮ
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       9. COUNTDOWN
+  ========================= -->
+
+  <section class="countdown">
+
+    <div class="content">
+
+      <div class="subtitle">
+        БИЗДИН ӨЗГӨЧӨ КҮНГӨ ЧЕЙИН
+      </div>
+
+      <h2 class="date-number">
+        10.10.2026
+      </h2>
+
+      <div class="countdown-box">
+
+        <div class="time-box">
+          <div class="time-number" id="days">0</div>
+          <div class="time-label">КҮН</div>
+        </div>
+
+        <div class="time-box">
+          <div class="time-number" id="hours">0</div>
+          <div class="time-label">СААТ</div>
+        </div>
+
+        <div class="time-box">
+          <div class="time-number" id="minutes">0</div>
+          <div class="time-label">МҮНӨТ</div>
+        </div>
+
+        <div class="time-box">
+          <div class="time-number" id="seconds">0</div>
+          <div class="time-label">СЕКУНД</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       10. RSVP
+  ========================= -->
+
+  <section class="rsvp">
+
+    <div class="content">
+
+      <h2 class="question">
+        Тойубузга келесизби? 🤍
+      </h2>
+
+      <div class="buttons">
+
+        <button onclick="showGuestOptions()">
+          🤍 Ооба, барам
+        </button>
+
+        <button
+          class="secondary"
+          onclick="showCannotAttend()"
+        >
+          Жок, келе албайм
+        </button>
+
+      </div>
+
+
+      <!-- YES -->
+      <div id="guestOptions">
+
+        <p class="subtitle">
+          Канча адам болуп келесиз?
+        </p>
+
+        <div class="buttons">
+
+          <button onclick="confirmAttendance('Өзүм барам')">
+            Өзүм барам
+          </button>
+
+          <button onclick="confirmAttendance('+1 адам менен барам')">
+            +1 адам менен барам
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- NO -->
+      <div id="cannotAttend">
+
+        <p>
+          Жооп бергениңиз үчүн рахмат. 🤍
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       11. FINAL
+  ========================= -->
+
+  <section class="final">
+
+    <div class="content">
+
+      <p class="final-text">
+        Биздин кубанычыбызды тең бөлүшүп,
+        ак тилегиңиздер менен келип,
+        тоюбуздун көркүн ачып кетишиңиздерди күтөбүз!
+      </p>
+
+      <div class="final-names">
+        Эламан & Шакира
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <script>
+
+    /* =========================
+       OPEN INVITATION
+    ========================= */
+
+    function openInvitation() {
+
+      const envelope =
+        document.getElementById("envelope");
+
+      envelope.classList.add("open");
+
+      const music =
+        document.getElementById("music");
+
+      music.volume = 0.55;
+
+      music.play().catch(() => {});
+
+      setTimeout(() => {
+
+        document
+          .getElementById("opening")
+          .nextElementSibling
+          .scrollIntoView({
+            behavior: "smooth"
+          });
+
+      }, 900);
+
+    }
+
+
+    /* =========================
+       MUSIC
+    ========================= */
+
+    function toggleMusic() {
+
+      const music =
+        document.getElementById("music");
+
+      const button =
+        document.getElementById("musicBtn");
+
+      if (music.paused) {
+
+        music.play();
+
+        button.innerHTML = "♪";
+
+      } else {
+
+        music.pause();
+
+        button.innerHTML = "🔇";
+
+      }
+
+    }
+
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
+
+    const weddingDate =
+      new Date("2026-10-10T16:00:00+06:00").getTime();
+
+    function updateCountdown() {
+
+      const now =
+        new Date().getTime();
+
+      const distance =
+        weddingDate - now;
+
+      if (distance <= 0) {
+
+        document.getElementById("days").innerText = "0";
+        document.getElementById("hours").innerText = "0";
+        document.getElementById("minutes").innerText = "0";
+        document.getElementById("seconds").innerText = "0";
+
+        return;
+
+      }
+
+      const days =
+        Math.floor(
+          distance / (1000 * 60 * 60 * 24)
+        );
+
+      const hours =
+        Math.floor(
+          (distance %
+            (1000 * 60 * 60 * 24)) /
+          (1000 * 60 * 60)
+        );
+
+      const minutes =
+        Math.floor(
+          (distance %
+            (1000 * 60 * 60)) /
+          (1000 * 60)
+        );
+
+      const seconds =
+        Math.floor(
+          (distance %
+            (1000 * 60)) /
+          1000
+        );
+
+      document.getElementById("days").innerText =
+        days;
+
+      document.getElementById("hours").innerText =
+        hours;
+
+      document.getElementById("minutes").innerText =
+        minutes;
+
+      document.getElementById("seconds").innerText =
+        seconds;
+
+    }
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+
+    /* =========================
+       RSVP
+    ========================= */
+
+    function showGuestOptions() {
+
+      document.getElementById(
+        "guestOptions"
+      ).style.display = "block";
+
+      document.getElementById(
+        "cannotAttend"
+      ).style.display = "none";
+
+    }
+
+
+    function showCannotAttend() {
+
+      document.getElementById(
+        "guestOptions"
+      ).style.display = "none";
+
+      document.getElementById(
+        "cannotAttend"
+      ).style.display = "block";
+
+    }
+
+
+    function confirmAttendance(option) {
+
+      alert(
+        "Рахмат! 🤍\n" +
+        "Катышууңуз: " + option
+      );
+
+    }
+
+  </script>
+
+</body>
+</html>
