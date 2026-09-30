@@ -7,11 +7,10 @@
 <title>Эламан & Шакира</title>
 
 <style>
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html{
@@ -20,7 +19,7 @@ html{
 
 body{
     background:#f5f1ea;
-    color:#3e3933;
+    color:#403a34;
     font-family:Georgia,"Times New Roman",serif;
     overflow-x:hidden;
 }
@@ -30,18 +29,17 @@ section{
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:40px 22px;
+    padding:40px 20px;
     text-align:center;
-    position:relative;
 }
 
 .content{
     width:100%;
     max-width:620px;
-    animation:fadeIn 1.2s ease;
+    animation:fade .9s ease;
 }
 
-@keyframes fadeIn{
+@keyframes fade{
     from{
         opacity:0;
         transform:translateY(25px);
@@ -52,36 +50,32 @@ section{
     }
 }
 
-/* =========================
-   MUSIC
-========================= */
+/* MUSIC BUTTON */
 
 .music-button{
     position:fixed;
     right:18px;
     top:18px;
-    width:45px;
-    height:45px;
-    border-radius:50%;
+    width:46px;
+    height:46px;
     border:none;
-    background:rgba(65,60,53,.75);
+    border-radius:50%;
+    background:rgba(65,58,50,.78);
     color:white;
     font-size:20px;
     z-index:9999;
 }
 
-/* =========================
-   OPENING
-========================= */
+/* OPENING */
 
 #opening{
+    min-height:100vh;
     background:
-    linear-gradient(
-        rgba(238,232,221,.45),
-        rgba(238,232,221,.45)
-    ),
-    url("358.jpeg") center/cover no-repeat;
-
+        linear-gradient(
+            rgba(238,232,221,.42),
+            rgba(238,232,221,.42)
+        ),
+        url("358.jpeg") center/cover no-repeat;
     cursor:pointer;
 }
 
@@ -89,22 +83,21 @@ section{
     width:300px;
     height:195px;
     margin:auto;
-    background:#e6ddcf;
+    background:#e5dccd;
     position:relative;
     box-shadow:0 25px 70px rgba(0,0,0,.25);
-    transition:1s;
 }
 
 .flap{
     position:absolute;
-    top:0;
     left:0;
+    top:0;
     width:0;
     height:0;
 
     border-left:150px solid transparent;
     border-right:150px solid transparent;
-    border-top:105px solid #d6cabb;
+    border-top:105px solid #d4c7b6;
 
     transform-origin:top;
     transition:1.2s;
@@ -117,24 +110,22 @@ section{
 
 .seal{
     position:absolute;
+    left:50%;
+    top:67px;
+    transform:translateX(-50%);
+
     width:70px;
     height:70px;
     border-radius:50%;
 
-    background:#9b846d;
+    background:#947c66;
     color:white;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    left:50%;
-    top:67px;
-    transform:translateX(-50%);
-
     z-index:5;
-
-    font-size:13px;
     letter-spacing:2px;
 }
 
@@ -142,22 +133,19 @@ section{
     margin-top:35px;
     font-size:13px;
     letter-spacing:3px;
-    text-transform:uppercase;
 }
 
-/* =========================
-   TEXT
-========================= */
+/* TEXT */
 
 .script{
     font-family:"Brush Script MT",cursive;
     font-size:31px;
     line-height:1.7;
-    color:#766654;
+    color:#766554;
 }
 
 .small-title{
-    font-size:14px;
+    font-size:13px;
     letter-spacing:4px;
     margin-bottom:25px;
 }
@@ -165,21 +153,20 @@ section{
 .main-title{
     font-size:clamp(45px,12vw,80px);
     font-weight:normal;
-    letter-spacing:2px;
     line-height:1.1;
 }
 
 .amp{
     font-family:cursive;
-    color:#9b8064;
+    color:#967c63;
     font-size:40px;
 }
 
 .text{
-    font-size:17px;
-    line-height:1.9;
     max-width:520px;
     margin:25px auto;
+    font-size:17px;
+    line-height:1.9;
 }
 
 .photo{
@@ -193,30 +180,24 @@ section{
     box-shadow:0 20px 60px rgba(0,0,0,.18);
 }
 
-/* =========================
-   COUPLE
-========================= */
+/* COUPLE */
 
 .couple{
     background:#faf7f1;
 }
 
-/* =========================
-   INVITATION
-========================= */
+/* INVITATION */
 
 .invitation{
     background:
-    linear-gradient(
-        rgba(248,244,237,.78),
-        rgba(248,244,237,.78)
-    ),
-    url("362.jpeg") center/cover no-repeat;
+        linear-gradient(
+            rgba(248,244,237,.78),
+            rgba(248,244,237,.78)
+        ),
+        url("362.jpeg") center/cover no-repeat;
 }
 
-/* =========================
-   OWNERS
-========================= */
+/* OWNERS */
 
 .owners{
     background:#eee8de;
@@ -227,9 +208,7 @@ section{
     margin:20px 0 30px;
 }
 
-/* =========================
-   DATE
-========================= */
+/* DATE */
 
 .date-section{
     background:#f8f4ed;
@@ -253,9 +232,7 @@ section{
     letter-spacing:2px;
 }
 
-/* =========================
-   PROGRAM
-========================= */
+/* PROGRAM */
 
 .program{
     background:#eae3d9;
@@ -278,20 +255,17 @@ section{
 
 .program-text{
     font-size:17px;
-    letter-spacing:1px;
 }
 
-/* =========================
-   LOCATION
-========================= */
+/* LOCATION */
 
 .location{
     background:
-    linear-gradient(
-        rgba(247,243,236,.82),
-        rgba(247,243,236,.82)
-    ),
-    url("370.jpeg") center/cover no-repeat;
+        linear-gradient(
+            rgba(247,243,236,.82),
+            rgba(247,243,236,.82)
+        ),
+        url("370.jpeg") center/cover no-repeat;
 }
 
 .restaurant{
@@ -309,18 +283,13 @@ section{
     display:inline-block;
     padding:16px 30px;
     border-radius:30px;
-
     background:#655b50;
     color:white;
-
     text-decoration:none;
     font-size:14px;
-    letter-spacing:1px;
 }
 
-/* =========================
-   COUNTDOWN
-========================= */
+/* COUNTDOWN */
 
 .countdown{
     background:#f4efe7;
@@ -336,7 +305,6 @@ section{
     justify-content:center;
     gap:12px;
     flex-wrap:wrap;
-    margin-top:35px;
 }
 
 .time-box{
@@ -354,9 +322,7 @@ section{
     margin-top:6px;
 }
 
-/* =========================
-   RSVP
-========================= */
+/* RSVP */
 
 .rsvp{
     background:#ebe4da;
@@ -372,7 +338,6 @@ section{
     width:100%;
     max-width:340px;
     margin:auto;
-
     display:flex;
     flex-direction:column;
     gap:14px;
@@ -381,15 +346,11 @@ section{
 button{
     border:none;
     padding:16px 20px;
-
     border-radius:30px;
-
     background:#716354;
     color:white;
-
     font-family:inherit;
     font-size:15px;
-
     cursor:pointer;
 }
 
@@ -408,20 +369,17 @@ button.secondary{
     display:none;
     margin-top:30px;
     font-size:17px;
-    line-height:1.8;
 }
 
-/* =========================
-   FINAL
-========================= */
+/* FINAL */
 
 .final{
     background:
-    linear-gradient(
-        rgba(248,244,237,.70),
-        rgba(248,244,237,.70)
-    ),
-    url("IMG_6165.png") center/cover no-repeat;
+        linear-gradient(
+            rgba(248,244,237,.70),
+            rgba(248,244,237,.70)
+        ),
+        url("IMG_6165.png") center/cover no-repeat;
 }
 
 .final-text{
@@ -455,42 +413,41 @@ button.secondary{
     .restaurant{
         font-size:27px;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
-
 <!-- =========================
      MUSIC
+     ФАЙЛДЫН АТЫ ТАК УШУ:
+     music.mp3.mp3
 ========================= -->
 
-<audio id="music" loop preload="auto">
-    <source src="music.mp3" type="audio/mpeg">
+<audio
+    id="music"
+    preload="auto"
+    loop
+    playsinline>
+    <source src="music.mp3.mp3" type="audio/mpeg">
 </audio>
 
 <button
     class="music-button"
     id="musicButton"
-    onclick="toggleMusic()">
+    onclick="toggleMusic(event)">
     ♪
 </button>
 
 
-<!-- =========================
-     1. OPENING
-========================= -->
+<!-- 1. OPENING -->
 
 <section id="opening" onclick="openInvitation()">
 
     <div class="content">
 
-        <div
-            class="envelope"
-            id="envelope">
+        <div class="envelope" id="envelope">
 
             <div class="flap"></div>
 
@@ -509,24 +466,17 @@ button.secondary{
 </section>
 
 
-<!-- =========================
-     2. POEM
-========================= -->
+<!-- 2. POEM -->
 
 <section>
 
     <div class="content">
 
         <p class="script">
-
             Эки жүрөк бир сүйүүгө байланган,<br>
-
             Эки тагдыр бир жолго айланган.<br>
-
             Өзгөчө күндө кубанычыбызды бөлүшүп,<br>
-
             Сиздерди тоюбузга күтөбүз!
-
         </p>
 
     </div>
@@ -534,9 +484,7 @@ button.secondary{
 </section>
 
 
-<!-- =========================
-     3. NAMES
-========================= -->
+<!-- 3. NAMES -->
 
 <section class="couple">
 
@@ -547,22 +495,14 @@ button.secondary{
         </div>
 
         <h1 class="main-title">
-
             Эламан
-
-            <span class="amp">
-                &
-            </span>
-
+            <span class="amp">&</span>
             Шакира
-
         </h1>
 
         <p class="text">
-
             Биздин өзгөчө күнүбүзгө
             сиздерди чын жүрөктөн чакырабыз!
-
         </p>
 
         <img
@@ -575,9 +515,7 @@ button.secondary{
 </section>
 
 
-<!-- =========================
-     4. INVITATION
-========================= -->
+<!-- 4. INVITATION -->
 
 <section class="invitation">
 
@@ -588,20 +526,16 @@ button.secondary{
         </p>
 
         <p class="text">
-
             Өмүрүбүздөгү эң маанилүү жана
             өзгөчө күндөрдүн биринде сиздерди
             жаныбыздан көрүп,
             кубанычыбызды чогуу бөлүшкүбүз келет.
-
         </p>
 
         <p class="text">
-
             Тойубузга келип,
             ак тилегиңиздерди айтып,
             бактылуу күнүбүздүн күбөсү болуп бериңиздер!
-
         </p>
 
     </div>
@@ -609,9 +543,7 @@ button.secondary{
 </section>
 
 
-<!-- =========================
-     5. OWNERS
-========================= -->
+<!-- 5. TOY OWNERS -->
 
 <section class="owners">
 
@@ -635,9 +567,7 @@ button.secondary{
 </section>
 
 
-<!-- =========================
-     6. DATE
-========================= -->
+<!-- 6. DATE -->
 
 <section class="date-section">
 
@@ -662,9 +592,7 @@ button.secondary{
 </section>
 
 
-<!-- =========================
-     7. PROGRAM
-========================= -->
+<!-- 7. PROGRAM -->
 
 <section class="program">
 
@@ -703,9 +631,7 @@ button.secondary{
 </section>
 
 
-<!-- =========================
-     8. LOCATION
-========================= -->
+<!-- 8. LOCATION -->
 
 <section class="location">
 
@@ -720,11 +646,8 @@ button.secondary{
         </div>
 
         <div class="address">
-
             Бишкек шаары,<br>
-
             Карагул Акмат көчөсү, 70
-
         </div>
 
         <a
@@ -741,9 +664,7 @@ button.secondary{
 </section>
 
 
-<!-- =========================
-     9. COUNTDOWN
-========================= -->
+<!-- 9. COUNTDOWN -->
 
 <section class="countdown">
 
@@ -760,62 +681,23 @@ button.secondary{
         <div class="countdown-box">
 
             <div class="time-box">
-
-                <div
-                    class="number"
-                    id="days">
-                    0
-                </div>
-
-                <div class="label">
-                    КҮН
-                </div>
-
+                <div class="number" id="days">0</div>
+                <div class="label">КҮН</div>
             </div>
 
-
             <div class="time-box">
-
-                <div
-                    class="number"
-                    id="hours">
-                    0
-                </div>
-
-                <div class="label">
-                    СААТ
-                </div>
-
+                <div class="number" id="hours">0</div>
+                <div class="label">СААТ</div>
             </div>
 
-
             <div class="time-box">
-
-                <div
-                    class="number"
-                    id="minutes">
-                    0
-                </div>
-
-                <div class="label">
-                    МҮНӨТ
-                </div>
-
+                <div class="number" id="minutes">0</div>
+                <div class="label">МҮНӨТ</div>
             </div>
 
-
             <div class="time-box">
-
-                <div
-                    class="number"
-                    id="seconds">
-                    0
-                </div>
-
-                <div class="label">
-                    СЕКУНД
-                </div>
-
+                <div class="number" id="seconds">0</div>
+                <div class="label">СЕКУНД</div>
             </div>
 
         </div>
@@ -825,9 +707,7 @@ button.secondary{
 </section>
 
 
-<!-- =========================
-     10. RSVP
-========================= -->
+<!-- 10. RSVP -->
 
 <section class="rsvp">
 
@@ -846,9 +726,7 @@ button.secondary{
             <button
                 class="secondary"
                 onclick="showNo()">
-
                 Жок, келе албайм
-
             </button>
 
         </div>
@@ -876,9 +754,7 @@ button.secondary{
 
 
         <div id="cannotAttend">
-
             Жооп бергениңиз үчүн рахмат. 🤍
-
         </div>
 
     </div>
@@ -886,20 +762,16 @@ button.secondary{
 </section>
 
 
-<!-- =========================
-     11. FINAL
-========================= -->
+<!-- 11. FINAL -->
 
 <section class="final">
 
     <div class="content">
 
         <p class="final-text">
-
             Биздин кубанычыбызды тең бөлүшүп,
             ак тилегиңиздер менен келип,
             тоюбуздун көркүн ачып кетишиңиздерди күтөбүз!
-
         </p>
 
         <div class="final-names">
@@ -914,7 +786,7 @@ button.secondary{
 <script>
 
 /* =========================
-   OPEN INVITATION + MUSIC
+   OPEN + MUSIC
 ========================= */
 
 function openInvitation(){
@@ -928,31 +800,31 @@ function openInvitation(){
     const music =
         document.getElementById("music");
 
-    music.volume = 0.65;
+    music.volume = 0.7;
+
 
     /*
-       Музыка конверт басылган учурда
-       башталат.
+      Эң маанилүүсү:
+      музыка колдонуучунун TAP аракетинин
+      ичинде иштетилет.
     */
 
     music.play()
-        .then(() => {
+    .then(function(){
 
-            document
-                .getElementById("musicButton")
-                .innerHTML = "♫";
+        document.getElementById(
+            "musicButton"
+        ).innerHTML = "♫";
 
-        })
-        .catch(() => {
+    })
+    .catch(function(error){
 
-            /*
-              Эгер браузер биринчи жолу
-              ойнотууга уруксат бербесе,
-              колдонуучу оң жогору жактагы
-              музыка баскычын басат.
-            */
+        console.log(
+            "Music error:",
+            error
+        );
 
-        });
+    });
 
 
     setTimeout(function(){
@@ -962,7 +834,7 @@ function openInvitation(){
             behavior:"smooth"
         });
 
-    },1000);
+    },900);
 
 }
 
@@ -971,7 +843,11 @@ function openInvitation(){
    MUSIC BUTTON
 ========================= */
 
-function toggleMusic(){
+function toggleMusic(event){
+
+    if(event){
+        event.stopPropagation();
+    }
 
     const music =
         document.getElementById("music");
@@ -982,9 +858,12 @@ function toggleMusic(){
 
     if(music.paused){
 
-        music.play();
+        music.play()
+        .then(function(){
 
-        button.innerHTML = "♫";
+            button.innerHTML = "♫";
+
+        });
 
     }else{
 
@@ -1002,7 +881,9 @@ function toggleMusic(){
 ========================= */
 
 const weddingDate =
-    new Date("2026-10-10T16:00:00+06:00").getTime();
+    new Date(
+        "2026-10-10T16:00:00+06:00"
+    ).getTime();
 
 
 function updateCountdown(){
@@ -1016,64 +897,59 @@ function updateCountdown(){
 
     if(distance <= 0){
 
-        document.getElementById("days").innerHTML = "0";
-
-        document.getElementById("hours").innerHTML = "0";
-
-        document.getElementById("minutes").innerHTML = "0";
-
-        document.getElementById("seconds").innerHTML = "0";
+        document.getElementById("days").innerText="0";
+        document.getElementById("hours").innerText="0";
+        document.getElementById("minutes").innerText="0";
+        document.getElementById("seconds").innerText="0";
 
         return;
-
     }
 
 
     const days =
         Math.floor(
             distance /
-            (1000 * 60 * 60 * 24)
+            (1000*60*60*24)
         );
 
 
     const hours =
         Math.floor(
             (distance %
-            (1000 * 60 * 60 * 24)) /
-            (1000 * 60 * 60)
+            (1000*60*60*24)) /
+            (1000*60*60)
         );
 
 
     const minutes =
         Math.floor(
             (distance %
-            (1000 * 60 * 60)) /
-            (1000 * 60)
+            (1000*60*60)) /
+            (1000*60)
         );
 
 
     const seconds =
         Math.floor(
             (distance %
-            (1000 * 60)) /
+            (1000*60)) /
             1000
         );
 
 
-    document.getElementById("days").innerHTML =
+    document.getElementById("days").innerText =
         days;
 
-    document.getElementById("hours").innerHTML =
+    document.getElementById("hours").innerText =
         hours;
 
-    document.getElementById("minutes").innerHTML =
+    document.getElementById("minutes").innerText =
         minutes;
 
-    document.getElementById("seconds").innerHTML =
+    document.getElementById("seconds").innerText =
         seconds;
 
 }
-
 
 updateCountdown();
 
@@ -1091,11 +967,11 @@ function showYes(){
 
     document.getElementById(
         "guestOptions"
-    ).style.display = "block";
+    ).style.display="block";
 
     document.getElementById(
         "cannotAttend"
-    ).style.display = "none";
+    ).style.display="none";
 
 }
 
@@ -1104,11 +980,11 @@ function showNo(){
 
     document.getElementById(
         "guestOptions"
-    ).style.display = "none";
+    ).style.display="none";
 
     document.getElementById(
         "cannotAttend"
-    ).style.display = "block";
+    ).style.display="block";
 
 }
 
@@ -1118,13 +994,13 @@ function confirmGuest(option){
     document.getElementById(
         "guestOptions"
     ).innerHTML =
-
-    "<p class='text'>" +
-    "Рахмат! 🤍<br><br>" +
-    "Сиздин жообуңуз кабыл алынды." +
-    "<br><br>" +
-    option +
-    "</p>";
+    `
+    <p class="text">
+        Рахмат! 🤍<br><br>
+        Сиздин жообуңуз кабыл алынды.<br><br>
+        ${option}
+    </p>
+    `;
 
 }
 
